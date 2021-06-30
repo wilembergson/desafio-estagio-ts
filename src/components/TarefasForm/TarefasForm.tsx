@@ -1,23 +1,33 @@
-import React, { useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 
-export default function TarefasForm(props){
+type Task = {
+    id: number
+    texto: string
 
-    const [countId, setCountId] = useState(1)
-    const [entrada, setEntrada] = useState()
+}
+
+interface Props{
+    onSubmit: (n: Task) => void
+}
+
+export default function TarefasForm({onSubmit}: Props){
+
+    const [countId, setCountId] = useState<number>(1)
+    const [entrada, setEntrada] = useState<string>('')
     
 
-    const handleChange = e => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
         setEntrada(e.target.value)
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = (e: any): void => {
         e.preventDefault()
 
         let n = countId + 1
         setCountId(n)
         
-        props.onSubmit({
-            id: countId ,
+        onSubmit({
+            id: countId,
             texto: entrada
         })
         setEntrada('')
@@ -36,7 +46,7 @@ export default function TarefasForm(props){
                     className="tarefa-input"
                     onChange={handleChange}
                 />
-                <button className="botao-adicionar">Adicionar</button>
+                <button className="botao-adicionar" type="submit">Adicionar</button>
             </form>
         </div>
     )
