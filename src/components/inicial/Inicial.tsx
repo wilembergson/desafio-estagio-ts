@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react'
 import './Inicial.css'
 import TarefasForm from '../TarefasForm/TarefasForm'
-
+import Tarefa from '../Tarefa/Tarefa'
 
 type Task = {
     id: number,
@@ -23,13 +23,14 @@ export default function Inicial(){
     return(
         <div className="inicial">
             <TarefasForm onSubmit={adicionar}/>
+            <Tarefa tarefas={tarefas}/>
             
-            <div className="lado-direito">
+            {/*<div className="lado-direito">
                 <h2>Tarefas listadas</h2>
                 {tarefas.map(t=>(
                  <div>ID:{t.id}, {t.texto}</div> 
                 ))}
-            </div>
+                </div>*/}
         </div>
     )
 }
