@@ -18,6 +18,7 @@
     background: rgb(187, 211, 185);
     overflow-y: scroll;
     height: 701px;
+    padding: 5px 30px;
 }
 
 h1{
