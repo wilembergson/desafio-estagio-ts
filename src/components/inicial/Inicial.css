@@ -1,0 +1,30 @@
+.inicial{
+    display: flex;
+    min-height: 700px;
+    width: 100%;
+    background: rgb(192, 16, 16);
+    overflow: hidden;
+}
+
+.lado-esquerdo{
+    min-height: 700px;
+    width: 50%;
+    background: rgb(95, 211, 85);
+}
+
+.lado-direito{
+    min-height: 700px;
+    width: 50%;
+    background: rgb(187, 211, 185);
+    overflow-y: scroll;
+    height: 701px;
+}
+
+h1{
+    color: #FFF;
+    margin-top: 200px;
+}
+h3{
+    color: #FFF;
+    margin-bottom: 100px;
+}
