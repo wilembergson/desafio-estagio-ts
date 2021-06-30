@@ -20,11 +20,16 @@ export default function Inicial(){
         setTarefas(novasTarefas)
     }    
 
+    const remover = (id: number) => {
+        const removerObj = [...tarefas].filter((t: Task) => t.id !== id)
+        setTarefas(removerObj)
+    }
+
     return(
         <div className="inicial">
             <TarefasForm onSubmit={adicionar}/>
-            <Tarefa tarefas={tarefas}/>
-            
+            <Tarefa tarefas={tarefas} removerTarefa={remover}/>
+
             {/*<div className="lado-direito">
                 <h2>Tarefas listadas</h2>
                 {tarefas.map(t=>(
