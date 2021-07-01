@@ -5,7 +5,8 @@ import Tarefa from '../Tarefa/Tarefa'
 
 type Task = {
     id: number,
-    texto: string
+    texto: string,
+    concluida?: boolean
  
 }
 
@@ -32,10 +33,20 @@ export default function Inicial(){
         setTarefas(prev => prev.map((item:Task) => (item.id === tarefaId ? novoValor : item)))
     }
 
+    const tarefaCompleta = (id: number) => {
+        let tarefasAtualizadas = tarefas.map(t => {
+            if(t.id === id){
+                t.concluida = !t.concluida
+            }
+            return t
+        })
+        setTarefas(tarefasAtualizadas)
+    }
+
     return(
         <div className="inicial">
             <TarefasForm onSubmit={adicionar}/>
-            <Tarefa tarefas={tarefas} removerTarefa={remover} atualizarTarefa={atualizar}/>
+            <Tarefa tarefas={tarefas} removerTarefa={remover} atualizarTarefa={atualizar} tarefaCompleta={tarefaCompleta}/>
         </div>
     )
 }

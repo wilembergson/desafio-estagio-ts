@@ -1,9 +1,25 @@
 .tarefaObj{
     color: #FFF;
     background: rgb(90, 18, 119);
-    width: auto;
+    width: 100%;
     height: 60px;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    overflow: hidden;
+}
+.tarefaObj-concluida{
+    color: rgb(71, 67, 67);
+    background: rgb(45, 37, 48);
+    width: 100%;
+    height: 60px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     margin: 10px 0;
     cursor: pointer;
     display: flex;
@@ -14,9 +30,38 @@
 }
 
 .botao{
-    height: 30px;
-    width: 30px;
+    height: 60px;
+    width: 50%;
     font-size: 20px;
+    color: #FFF;
+    background: rgb(90, 18, 119);
+    border: none;
+    cursor: pointer;
     
+}
+.botao:hover{
+    color: rgb(226, 29, 180);
+}
+
+.icones{
+    color: #fff;
+    background: rgb(160, 63, 63);
+    width: 100px;
+    height: 60px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+}
+.aaa{
+    display: flex;
+    height: 60px;
+    border-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    overflow: hidden;
 }
 

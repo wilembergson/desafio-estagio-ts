@@ -3,7 +3,7 @@ import React, { ChangeEvent, useState } from 'react'
 type Task = {
     id: number
     texto: string
-
+    concluida?: boolean
 }
 
 interface Props{
@@ -35,20 +35,42 @@ export default function TarefasForm({onSubmit,edit}: Props){
     }
 
     return(
-        <div className="lado-esquerdo">
-            <h1>Organizador de tarefas</h1>
-            <h3>Desafio Heeds</h3>
-            <form className="tarefa-form" onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    placeholder="Digite uma tarefa"
-                    value={entrada}
-                    name="text"
-                    className="tarefa-input"
-                    onChange={handleChange}
-                />
-                <button className="botao-adicionar">Adicionar</button>
-            </form>
-        </div>
+        <>
+            {edit ? (
+                <>
+                    <div className="lado-direito">
+                        <h1>Atualizar tarefa</h1>
+                        <form className="tarefa-form" onSubmit={handleSubmit}>
+                            <input 
+                                type="text" 
+                                placeholder="Atualizar tarefa"
+                                value={entrada}
+                                name="text"
+                                className="tarefa-input"
+                                onChange={handleChange}
+                            />
+                            <button className="botao-adicionar">Atualizar</button>
+                        </form>
+                    </div>
+                </>
+            ):(
+                <div className="lado-esquerdo">
+                    <h1>Organizador de tarefas</h1>
+                    <h3>Desafio Heeds</h3>
+                    <form className="tarefa-form" onSubmit={handleSubmit}>
+                        <input 
+                            type="text" 
+                            placeholder="Digite uma tarefa"
+                            value={entrada}
+                            name="text"
+                            className="tarefa-input"
+                            onChange={handleChange}
+                        />
+                        <button className="botao-adicionar">Adicionar</button>
+                    </form>
+                </div>
+            )}
+        </>
+        
     )
 }
