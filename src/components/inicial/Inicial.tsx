@@ -25,17 +25,17 @@ export default function Inicial(){
         setTarefas(removerObj)
     }
 
+    const atualizar = (tarefaId: number, novoValor: Task) => {
+        if(!novoValor.texto || /^\s*$/.test(novoValor.texto)){
+            return
+        }
+        setTarefas(prev => prev.map((item:Task) => (item.id === tarefaId ? novoValor : item)))
+    }
+
     return(
         <div className="inicial">
             <TarefasForm onSubmit={adicionar}/>
-            <Tarefa tarefas={tarefas} removerTarefa={remover}/>
-
-            {/*<div className="lado-direito">
-                <h2>Tarefas listadas</h2>
-                {tarefas.map(t=>(
-                 <div>ID:{t.id}, {t.texto}</div> 
-                ))}
-                </div>*/}
+            <Tarefa tarefas={tarefas} removerTarefa={remover} atualizarTarefa={atualizar}/>
         </div>
     )
 }

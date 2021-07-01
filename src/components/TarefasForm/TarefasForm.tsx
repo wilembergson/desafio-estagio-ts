@@ -8,12 +8,13 @@ type Task = {
 
 interface Props{
     onSubmit: (n: Task) => void
+    edit?: Task
 }
 
-export default function TarefasForm({onSubmit}: Props){
+export default function TarefasForm({onSubmit,edit}: Props){
 
     const [countId, setCountId] = useState<number>(1)
-    const [entrada, setEntrada] = useState<string>('')
+    const [entrada, setEntrada] = useState<string>(edit ? edit.texto : '')
     
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
