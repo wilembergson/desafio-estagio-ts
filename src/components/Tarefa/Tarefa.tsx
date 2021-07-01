@@ -25,7 +25,7 @@ export default function Tarefa({tarefas, removerTarefa, atualizarTarefa}: Props)
         setEdit({id: 0, texto: ''})
     }
 
-    if(edit.id){
+    if(edit.id !== 0){
         return<TarefasForm edit={edit} onSubmit={submitUpdate}/>
     }
 
@@ -34,7 +34,7 @@ export default function Tarefa({tarefas, removerTarefa, atualizarTarefa}: Props)
             <h2>Tarefas a serem concluídas</h2>
             {tarefas.map((t: Task) => (
                 <div className="tarefaObj">
-                    <label>{t.texto}</label>
+                    <label>----{t.id}----{t.texto}</label>
                     <div className="icones">
                         <button className="botao" onClick={() => setEdit({id: t.id, texto: t.texto})}><BiEdit/></button>
                         <button className="botao" onClick={() =>removerTarefa(t.id)}><IoIosCloseCircle/></button>

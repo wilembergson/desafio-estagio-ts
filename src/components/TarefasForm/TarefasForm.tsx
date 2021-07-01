@@ -13,7 +13,7 @@ interface Props{
 
 export default function TarefasForm({onSubmit,edit}: Props){
 
-    const [countId, setCountId] = useState<number>(1)
+    const [countId, setCountId] = useState<number>(edit ? edit.id : 1)
     const [entrada, setEntrada] = useState<string>(edit ? edit.texto : '')
     
 
@@ -47,7 +47,7 @@ export default function TarefasForm({onSubmit,edit}: Props){
                     className="tarefa-input"
                     onChange={handleChange}
                 />
-                <button className="botao-adicionar" type="submit">Adicionar</button>
+                <button className="botao-adicionar">Adicionar</button>
             </form>
         </div>
     )
