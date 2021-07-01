@@ -1,25 +1,25 @@
 .inicial{
     display: flex;
-    min-height: 700px;
+    min-height: 650px;
     width: 100%;
     background: rgb(49, 46, 46);
     overflow: hidden;
 }
 
 .lado-esquerdo{
-    background-image: url('../../img/fundo2.jpg');
-    min-height: 700px;
+    background-image: url('../../img/Fundo.jpg');
+    min-height: 690px;
     width: 50%;
 
 }
 
 
 .lado-direito{
-    min-height: 700px;
+    min-height: 690px;
     width: 50%;
     background: rgb(187, 211, 185);
     overflow-y: scroll;
-    height: 701px;
+    height: 650px;
     padding: 5px 30px;
 }
 
