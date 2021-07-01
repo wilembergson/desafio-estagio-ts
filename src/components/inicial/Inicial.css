@@ -2,15 +2,17 @@
     display: flex;
     min-height: 700px;
     width: 100%;
-    background: rgb(192, 16, 16);
+    background: rgb(49, 46, 46);
     overflow: hidden;
 }
 
 .lado-esquerdo{
+    background-image: url('../../img/fundo2.jpg');
     min-height: 700px;
     width: 50%;
-    background: rgb(95, 211, 85);
+
 }
+
 
 .lado-direito{
     min-height: 700px;

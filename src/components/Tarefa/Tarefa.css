@@ -1,10 +1,9 @@
 .tarefaObj{
     color: #FFF;
-    background: rgb(90, 18, 119);
+    background: rgba(93, 12, 255, 1);
     width: 100%;
     height: 60px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-radius: 8px 0 0 8px;
     margin: 10px 0;
     cursor: pointer;
     display: flex;
@@ -18,8 +17,7 @@
     background: rgb(45, 37, 48);
     width: 100%;
     height: 60px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-radius: 8px 0 0 8px;
     margin: 10px 0;
     cursor: pointer;
     display: flex;
@@ -34,18 +32,22 @@
     width: 50%;
     font-size: 20px;
     color: #FFF;
-    background: rgb(90, 18, 119);
+    background: linear-gradient(
+      90deg,
+      rgba(93, 12, 255, 1) 0%,
+      rgba(155, 0, 250, 1) 100%
+    );
     border: none;
     cursor: pointer;
     
 }
 .botao:hover{
-    color: rgb(226, 29, 180);
+    color: rgb(75, 2, 58);
 }
 
 .icones{
     color: #fff;
-    background: rgb(160, 63, 63);
+    background: rgb(32, 31, 31);
     width: 100px;
     height: 60px;
     border-top-right-radius: 8px;
