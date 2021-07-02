@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { useState } from 'react'
 import './Inicial.css'
 import TarefasForm from '../TarefasForm/TarefasForm'
 import Tarefa from '../Tarefa/Tarefa'

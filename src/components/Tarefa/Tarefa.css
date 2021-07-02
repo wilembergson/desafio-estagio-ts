@@ -32,8 +32,8 @@
 }
 
 .tarefaObj:hover{
-    color: #000;
-    background: rgb(137, 197, 109);
+    color: #fff;
+    background: rgb(85, 189, 37);
     transition: 0.7s ease;
 }
 
