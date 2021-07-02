@@ -3,7 +3,7 @@
     border-radius: 4px 0 0 4px;
     border: 2px solid rgb(177, 98, 8);
     outline: none;
-    width: 220px;
+    width: 170px;
     background: transparent;
     color: #fff;
 }
@@ -28,7 +28,7 @@
 }
 
 /*------------RESPONSIVIDADE-----------*/
-@media (max-width:999px){
+@media (max-width:899px){
   .tarefa-input{
       width: 180px;
       

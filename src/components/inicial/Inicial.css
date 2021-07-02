@@ -1,6 +1,6 @@
 .inicial{
     display: flex;
-    min-height: 450px;
+    min-height: 500px;
     width: 100%;
     background: rgb(49, 46, 46);
     overflow: hidden;
@@ -8,7 +8,7 @@
 
 .lado-esquerdo{
     background-image: url('../../img/Fundo.jpg');
-    min-height: 490px;
+    min-height: 500px;
     width: 50%;
 
 }

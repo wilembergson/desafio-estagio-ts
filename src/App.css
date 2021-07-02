@@ -5,7 +5,7 @@ body{
 .app{
     display: flex;
     flex-direction: column;
-    width: 1000px;
+    width: 900px;
     min-height: 350px;
     background: #edeef3;
     text-align: center;
@@ -16,7 +16,7 @@ body{
 }
 
 /*------------RESPONSIVIDADE-----------*/
-@media (max-width:999px){
+@media (max-width:899px){
     .app{
         width: 799px;
     }
