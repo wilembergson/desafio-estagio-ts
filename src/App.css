@@ -18,7 +18,7 @@ body{
 /*------------RESPONSIVIDADE-----------*/
 @media (max-width:1199px){
     .app{
-        width: 800px;
+        width: 799px;
     }
 
 }
