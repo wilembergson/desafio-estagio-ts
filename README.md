@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# Organizador de tarefas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+##  :page_facing_up: Descrição do Projeto
+<p align="left">Nesta aplicação, é possível cadastrar tarefas à 
+serem realizadas ao longo do dia, e conforme uma tarefa for finalizada,
+basta clicar sobre ela e a mesma ficará marcada como finalizada.
+Também é possível excluír uma tarefa da lista além de também poder
+editar o conteúdo se for necessário. Se caso forem cadastradas tarefas
+a ponto de asceder o limite da tela, basta o usuário usar a rolagem 
+e seram mostradas todas as tarefas cadastradas</p>
+
+
+## 🛠 Tecnologias utilizadas 
+As seguintes ferramentas foram usadas na construção do projeto:
+- Javascript
+- React
+- NPM
+
+
+## Scripts disponíveis
+Neste projeto, é possivél execultar os seguintes comandos:
 
 ### `npm start`
+Executa o aplicativo no modo de desenvolvimento. 
+Abra o endereço http://localhost:3000 no navegador para visualizá-lo o projeto em funcionamento.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+##  :arrow_upper_right: Deploy
+Para o deploy do projeto foi utilizado o serviço do Netlify.
+Sistema em produção: https://organizador-tarefas.netlify.app/
