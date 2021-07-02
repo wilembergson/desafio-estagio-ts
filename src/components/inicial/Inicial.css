@@ -17,7 +17,7 @@
 .lado-direito{
     min-height: 690px;
     width: 50%;
-    background: rgb(187, 211, 185);
+    background: rgb(79, 82, 79);
     overflow-y: scroll;
     height: 650px;
     padding: 5px 30px;
@@ -26,6 +26,10 @@
 h1{
     color: #FFF;
     margin-top: 200px;
+}
+h2{
+    color: #FFF;
+
 }
 h3{
     color: #FFF;

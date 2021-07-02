@@ -32,12 +32,14 @@ export default function Tarefa({tarefas, removerTarefa, atualizarTarefa, tarefaC
 
     return(
         <div className="lado-direito">
+            <div className="cabecalho">
             <h2>Tarefas a serem concluídas</h2>
+            </div>
             
             {tarefas.map((t: Task) => (
-                <div className="aaa">
+                <div className="linha">
                 <div className={t.concluida ? "tarefaObj-concluida" : "tarefaObj"} key={t.id} onClick={() => tarefaCompleta(t.id)}>
-                    <label>----{t.id}----{t.texto}</label>
+                    <label>{t.id} - {t.texto}</label>
                 </div>
                 <div className="icones">
                         <button className="botao" onClick={() => setEdit({id: t.id, texto: t.texto})}><BiEdit/></button>

@@ -1,3 +1,7 @@
+body{
+    background: rgb(34, 33, 33);
+}
+
 .app{
     display: flex;
     flex-direction: column;
@@ -7,5 +11,6 @@
     text-align: center;
     margin: 118px auto;
     border-radius: 20px;
-    overflow: hidden;   
+    overflow: hidden; 
+    box-shadow: 5px 5px 5px black;  
 }
