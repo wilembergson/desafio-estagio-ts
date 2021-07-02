@@ -5,11 +5,11 @@ body{
 .app{
     display: flex;
     flex-direction: column;
-    width: 1200px;
-    min-height: 700px;
+    width: 1000px;
+    min-height: 350px;
     background: #edeef3;
     text-align: center;
-    margin: 118px auto;
+    margin: 60px auto;
     border-radius: 20px;
     overflow: hidden; 
     box-shadow: 5px 5px 5px black;  

@@ -4,14 +4,7 @@ import {BiEdit} from 'react-icons/bi'
 import {IoIosCloseCircle} from 'react-icons/io'
 import TarefasForm from '../TarefasForm/TarefasForm'
 
-import { Task } from '../../tipos/Tipos'
-
-type Props = {
-    tarefas: Task[]
-    removerTarefa: (id: number) => void
-    atualizarTarefa: (tarefaId: number, novoValor: Task) => void
-    tarefaCompleta: (id: number) => void
-}
+import { Task, Props } from '../../tipos/Tipos'
 
 export default function Tarefa({tarefas, removerTarefa, atualizarTarefa, tarefaCompleta}: Props){
 

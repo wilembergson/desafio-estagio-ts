@@ -3,7 +3,7 @@ import './TarefaForm.css'
 
 import { Task } from '../../tipos/Tipos'
 
-interface Props{
+type Props = {
     onSubmit: (n: Task) => void
     edit?: Task
 }

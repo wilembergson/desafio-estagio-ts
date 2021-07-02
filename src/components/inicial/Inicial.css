@@ -1,6 +1,6 @@
 .inicial{
     display: flex;
-    min-height: 650px;
+    min-height: 450px;
     width: 100%;
     background: rgb(49, 46, 46);
     overflow: hidden;
@@ -8,18 +8,18 @@
 
 .lado-esquerdo{
     background-image: url('../../img/Fundo.jpg');
-    min-height: 690px;
+    min-height: 490px;
     width: 50%;
 
 }
 
 
 .lado-direito{
-    min-height: 690px;
+    min-height: 500px;
     width: 50%;
     background: rgb(79, 82, 79);
     overflow-y: scroll;
-    height: 650px;
+    height: 350px;
     padding: 5px 30px;
 }
 ::-webkit-scrollbar{
