@@ -36,6 +36,7 @@ h3{
     margin-bottom: 100px;
 }
 
+/*------------RESPONSIVIDADE-----------*/
 @media (max-width:799px){
     .inicial{
         display: grid;

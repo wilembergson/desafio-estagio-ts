@@ -27,6 +27,7 @@
   transition: background 0.5s ease;
 }
 
+/*------------RESPONSIVIDADE-----------*/
 @media (max-width:1199px){
   .tarefa-input{
       width: 180px;
