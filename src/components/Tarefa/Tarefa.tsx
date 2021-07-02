@@ -36,15 +36,15 @@ export default function Tarefa({tarefas, removerTarefa, atualizarTarefa, tarefaC
             <h2>Tarefas a serem concluídas</h2>
             </div>
             
-            {tarefas.map((t: Task) => (
-                <div className="linha">
-                <div className={t.concluida ? "tarefaObj-concluida" : "tarefaObj"} key={t.id} onClick={() => tarefaCompleta(t.id)}>
-                    <label>{t.id} - {t.texto}</label>
-                </div>
-                <div className="icones">
-                        <button className="botao" onClick={() => setEdit({id: t.id, texto: t.texto})}><BiEdit/></button>
-                        <button className="botao" onClick={() =>removerTarefa(t.id)}><IoIosCloseCircle/></button>
-                </div>
+            {tarefas.map((t: Task, index) => (
+                <div className="linha" key={index}>
+                    <div className={t.concluida ? "tarefaObj-concluida" : "tarefaObj"} onClick={() => tarefaCompleta(t.id)}>
+                        <label>{t.texto}</label>
+                    </div>
+                    <div className="icones">
+                            <button className="botao" onClick={() => setEdit({id: t.id, texto: t.texto})}><BiEdit/></button>
+                            <button className="botao" onClick={() =>removerTarefa(t.id)}><IoIosCloseCircle/></button>
+                    </div>
                 </div>
             ))}
         </div>
