@@ -14,3 +14,17 @@ body{
     overflow: hidden; 
     box-shadow: 5px 5px 5px black;  
 }
+
+@media (max-width:1199px){
+    .app{
+        width: 800px;
+        
+    }
+
+}
+
+@media (max-width:799px){
+    .app{
+        width: 480px;
+    }
+}
