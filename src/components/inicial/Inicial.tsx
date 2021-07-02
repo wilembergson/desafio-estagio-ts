@@ -3,12 +3,7 @@ import './Inicial.css'
 import TarefasForm from '../TarefasForm/TarefasForm'
 import Tarefa from '../Tarefa/Tarefa'
 
-type Task = {
-    id: number,
-    texto: string,
-    concluida?: boolean
- 
-}
+import { Task } from '../../tipos/Tipos'
 
 export default function Inicial(){
     const [tarefas, setTarefas] = useState<Task[]>([])

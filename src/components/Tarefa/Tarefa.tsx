@@ -4,11 +4,7 @@ import {BiEdit} from 'react-icons/bi'
 import {IoIosCloseCircle} from 'react-icons/io'
 import TarefasForm from '../TarefasForm/TarefasForm'
 
-type Task = {
-    id: number,
-    texto: string
-    concluida?: boolean 
-}
+import { Task } from '../../tipos/Tipos'
 
 type Props = {
     tarefas: Task[]

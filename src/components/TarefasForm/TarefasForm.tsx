@@ -1,11 +1,7 @@
 import React, { ChangeEvent, useState } from 'react'
 import './TarefaForm.css'
 
-type Task = {
-    id: number
-    texto: string
-    concluida?: boolean
-}
+import { Task } from '../../tipos/Tipos'
 
 interface Props{
     onSubmit: (n: Task) => void
