@@ -11,11 +11,14 @@
 }
 .contagem{
     color: rgb(139, 34, 8);
-    margin-top: 0;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .contagem-finalizada{
     color: rgb(12, 109, 3);
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .tarefaObj{
