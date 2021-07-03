@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Tarefa.css'
 import {BiEdit} from 'react-icons/bi'
 import {IoIosCloseCircle} from 'react-icons/io'
@@ -9,7 +9,27 @@ import { Task, Props } from '../../tipos/Tipos'
 export default function Tarefa({tarefas, removerTarefa, atualizarTarefa, tarefaCompleta}: Props){
 
     const [edit, setEdit] = useState<Task>({id: 0, texto:''})
+    const [tarefasRalizadas, setTarefasRealizadas] = useState(0)
 
+//******************************************************* */
+    useEffect(() => {
+        let tc:number = 0
+        if(tarefas.length === 0){
+            setTarefasRealizadas(0)
+        } 
+        else{
+            tarefas.forEach(function (t){
+                if(t.concluida === true && tarefas.length!==0){
+                    tc++
+                }
+                setTarefasRealizadas(tc)
+            })
+        }
+       
+    }, [tarefas])
+
+
+//******************************************************* */
     const submitUpdate = (valorAtualizado: Task) => {
         atualizarTarefa(edit.id, valorAtualizado)
         setEdit({id: 0, texto: ''})
@@ -22,7 +42,10 @@ export default function Tarefa({tarefas, removerTarefa, atualizarTarefa, tarefaC
     return(
         <div className="lado-direito">
             <div className="cabecalho">
-            <h2>Tarefas a serem concluídas</h2>
+                <h2>Tarefas concluídas</h2>
+                <h2 className={tarefasRalizadas === tarefas.length && tarefasRalizadas !== 0 ? "contagem-finalizada": "contagem"}>
+                    {tarefasRalizadas}/{tarefas.length}
+                </h2>
             </div>
             
             {tarefas.map((t: Task, index) => (

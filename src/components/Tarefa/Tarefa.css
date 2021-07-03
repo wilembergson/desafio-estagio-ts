@@ -9,7 +9,14 @@
     margin-bottom: 40px;
     border-radius: 10px;
 }
+.contagem{
+    color: rgb(139, 34, 8);
+    margin-top: 0;
+}
 
+.contagem-finalizada{
+    color: rgb(12, 109, 3);
+}
 
 .tarefaObj{
     color: #FFF;
@@ -99,7 +106,7 @@
 }
 
 /*------------RESPONSIVIDADE-----------*/
-@media (max-width:799px){
+@media (max-width:699px){
     .cabecalho{
         width: 425px;
     }

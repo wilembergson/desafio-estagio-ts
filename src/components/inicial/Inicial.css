@@ -41,7 +41,7 @@ h3{
 }
 
 /*------------RESPONSIVIDADE-----------*/
-@media (max-width:799px){
+@media (max-width:699px){
     .inicial{
         display: grid;
     }
