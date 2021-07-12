@@ -4,35 +4,41 @@ import {BiEdit} from 'react-icons/bi'
 import {IoIosCloseCircle} from 'react-icons/io'
 import TarefasForm from '../TarefasForm/TarefasForm'
 
-import { Task, Props } from '../../tipos/Tipos'
+import { taskType } from '../../tipos/Tipos'
 
-export default function Tarefa({tarefas, removerTarefa, atualizarTarefa, tarefaCompleta}: Props){
+export type props = {
+    tasks: taskType[]
+    removeTask: (id: number) => void
+    updateTask: (tarefaId: number, novoValor: taskType) => void
+    taskComplete: (id: number) => void
+}
+export default function Tarefa({tasks, removeTask, updateTask, taskComplete}: props){
 
-    const [edit, setEdit] = useState<Task>({id: 0, texto:''})
-    const [tarefasRalizadas, setTarefasRealizadas] = useState(0)
+    const [edit, setEdit] = useState<taskType>({id: 0, text:''})
+    const [tasksPerformed, setTasksPerformed] = useState(0)
 
 //******************************************************* */
     useEffect(() => {
         let tc:number = 0
-        if(tarefas.length === 0){
-            setTarefasRealizadas(0)
+        if(tasks.length === 0){
+            setTasksPerformed(0)
         } 
         else{
-            tarefas.forEach(function (t){
-                if(t.concluida === true && tarefas.length!==0){
+            tasks.forEach(function (t){
+                if(t.concluded === true && tasks.length!==0){
                     tc++
                 }
-                setTarefasRealizadas(tc)
+                setTasksPerformed(tc)
             })
         }
        
-    }, [tarefas])
+    }, [tasks])
 
 
 //******************************************************* */
-    const submitUpdate = (valorAtualizado: Task) => {
-        atualizarTarefa(edit.id, valorAtualizado)
-        setEdit({id: 0, texto: ''})
+    const submitUpdate = (updatedValue: taskType) => {
+        updateTask(edit.id, updatedValue)
+        setEdit({id: 0, text: ''})
     }
 
     if(edit.id !== 0){
@@ -43,19 +49,19 @@ export default function Tarefa({tarefas, removerTarefa, atualizarTarefa, tarefaC
         <div className="lado-direito">
             <div className="cabecalho">
                 <h2>Tarefas concluídas</h2>
-                <h2 className={tarefasRalizadas === tarefas.length && tarefasRalizadas !== 0 ? "contagem-finalizada": "contagem"}>
-                    {tarefasRalizadas}/{tarefas.length}
+                <h2 className={tasksPerformed === tasks.length && tasksPerformed !== 0 ? "contagem-finalizada": "contagem"}>
+                    {tasksPerformed}/{tasks.length}
                 </h2>
             </div>
             
-            {tarefas.map((t: Task, index) => (
+            {tasks.map((t: taskType, index) => (
                 <div className="linha" key={index}>
-                    <div className={t.concluida ? "tarefaObj-concluida" : "tarefaObj"} onClick={() => tarefaCompleta(t.id)}>
-                        <label>{t.texto}</label>
+                    <div className={t.concluded ? "tarefaObj-concluida" : "tarefaObj"} onClick={() => taskComplete(t.id)}>
+                        <label>{t.text}</label>
                     </div>
                     <div className="icones">
-                            <button className="botao" onClick={() => setEdit({id: t.id, texto: t.texto})}><BiEdit/></button>
-                            <button className="botao" onClick={() =>removerTarefa(t.id)}><IoIosCloseCircle/></button>
+                            <button className="botao" onClick={() => setEdit({id: t.id, text: t.text})}><BiEdit/></button>
+                            <button className="botao" onClick={() =>removeTask(t.id)}><IoIosCloseCircle/></button>
                     </div>
                 </div>
             ))}

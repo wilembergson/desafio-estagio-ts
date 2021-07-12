@@ -1,21 +1,21 @@
 import React, { ChangeEvent, useState } from 'react'
 import './TarefaForm.css'
 
-import { Task } from '../../tipos/Tipos'
+import { taskType } from '../../tipos/Tipos'
 
-type Props = {
-    onSubmit: (n: Task) => void
-    edit?: Task
+type props = {
+    onSubmit: (n: taskType) => void
+    edit?: taskType
 }
 
-export default function TarefasForm({onSubmit,edit}: Props){
+export default function TarefasForm({onSubmit,edit}: props){
 
     const [countId, setCountId] = useState<number>(edit ? edit.id : 1)
-    const [entrada, setEntrada] = useState<string>(edit ? edit.texto : '')
+    const [input, setInput] = useState<string>(edit ? edit.text : '')
     
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-        setEntrada(e.target.value)
+        setInput(e.target.value)
     }
 
     const handleSubmit = (e: any): void => {
@@ -26,9 +26,9 @@ export default function TarefasForm({onSubmit,edit}: Props){
         
         onSubmit({
             id: countId,
-            texto: entrada
+            text: input
         })
-        setEntrada('')
+        setInput('')
     }
 
     return(
@@ -41,7 +41,7 @@ export default function TarefasForm({onSubmit,edit}: Props){
                             <input 
                                 type="text" 
                                 placeholder="Atualizar tarefa"
-                                value={entrada}
+                                value={input}
                                 name="text"
                                 className="tarefa-input"
                                 onChange={handleChange}
@@ -54,12 +54,12 @@ export default function TarefasForm({onSubmit,edit}: Props){
                 <div className="lado-esquerdo">
                     <div className="div1">
                         <h1>Organizador de tarefas</h1>
-                        <h3>Desafio Heeds</h3>
+                        <h3>Gerencie seu dia</h3>
                         <form className="tarefa-form" onSubmit={handleSubmit}>
                             <input 
                                 type="text" 
                                 placeholder="Digite uma tarefa"
-                                value={entrada}
+                                value={input}
                                 name="text"
                                 className="tarefa-input"
                                 onChange={handleChange}

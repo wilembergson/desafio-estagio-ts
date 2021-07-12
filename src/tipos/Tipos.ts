@@ -1,13 +1,7 @@
-export type Task = {
+export type taskType = {
     id: number,
-    texto: string,
-    concluida?: boolean
+    text: string,
+    concluded?: boolean
  
 }
 
-export type Props = {
-    tarefas: Task[]
-    removerTarefa: (id: number) => void
-    atualizarTarefa: (tarefaId: number, novoValor: Task) => void
-    tarefaCompleta: (id: number) => void
-}

@@ -3,45 +3,45 @@ import './Inicial.css'
 import TarefasForm from '../TarefasForm/TarefasForm'
 import Tarefa from '../Tarefa/Tarefa'
 
-import { Task } from '../../tipos/Tipos'
+import { taskType } from '../../tipos/Tipos'
 
 export default function Inicial(){
-    const [tarefas, setTarefas] = useState<Task[]>([])
+    const [tasks, setTasks] = useState<taskType[]>([])
 
-    const adicionar = (tarefa: Task) => {
-        if(!tarefa.texto || /^\s*$/.test(tarefa.texto)){
+    const add = (task: taskType) => {
+        if(!task.text || /^\s*$/.test(task.text)){
             return
         }
-        const novasTarefas = [tarefa, ...tarefas]
-        setTarefas(novasTarefas)
+        const newTasks = [task, ...tasks]
+        setTasks(newTasks)
     }    
 
-    const remover = (id: number) => {
-        const removerObj = [...tarefas].filter((t: Task) => t.id !== id)
-        setTarefas(removerObj)
+    const remove = (id: number) => {
+        const removeObj = [...tasks].filter((t: taskType) => t.id !== id)
+        setTasks(removeObj)
     }
 
-    const atualizar = (tarefaId: number, novoValor: Task) => {
-        if(!novoValor.texto || /^\s*$/.test(novoValor.texto)){
+    const update = (taskId: number, newValue: taskType) => {
+        if(!newValue.text || /^\s*$/.test(newValue.text)){
             return
         }
-        setTarefas(prev => prev.map((item:Task) => (item.id === tarefaId ? novoValor : item)))
+        setTasks(prev => prev.map((item:taskType) => (item.id === taskId ? newValue : item)))
     }
 
-    const tarefaCompleta = (id: number) => {
-        let tarefasAtualizadas = tarefas.map(t => {
+    const taskComplete = (id: number) => {
+        let updatedTasks = tasks.map(t => {
             if(t.id === id){
-                t.concluida = !t.concluida
+                t.concluded = !t.concluded
             }
             return t
         })
-        setTarefas(tarefasAtualizadas)
+        setTasks(updatedTasks)
     }
 
     return(
         <div className="inicial">
-            <TarefasForm onSubmit={adicionar}/>
-            <Tarefa tarefas={tarefas} removerTarefa={remover} atualizarTarefa={atualizar} tarefaCompleta={tarefaCompleta}/>
+            <TarefasForm onSubmit={add}/>
+            <Tarefa tasks={tasks} removeTask={remove} updateTask={update} taskComplete={taskComplete}/>
         </div>
     )
 }
