@@ -1,5 +1,5 @@
 import './App.css'
-import Inicial from './components/inicial/Inicial';
+import Inicial from './components/initial/Initial';
 
 function App() {
   return (

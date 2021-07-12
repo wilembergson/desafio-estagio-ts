@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import './Inicial.css'
-import TarefasForm from '../TarefasForm/TarefasForm'
-import Tarefa from '../Tarefa/Tarefa'
+import './Initial.css'
+import TaskForm from '../TasksForm/TasksForm'
+import Task from '../Task/Task'
 
-import { taskType } from '../../tipos/Tipos'
+import { taskType } from '../../types/Types'
 
-export default function Inicial(){
+export default function Initial(){
     const [tasks, setTasks] = useState<taskType[]>([])
 
     const add = (task: taskType) => {
@@ -29,7 +29,7 @@ export default function Inicial(){
     }
 
     const taskComplete = (id: number) => {
-        let updatedTasks = tasks.map(t => {
+        const updatedTasks = tasks.map(t => {
             if(t.id === id){
                 t.concluded = !t.concluded
             }
@@ -39,9 +39,9 @@ export default function Inicial(){
     }
 
     return(
-        <div className="inicial">
-            <TarefasForm onSubmit={add}/>
-            <Tarefa tasks={tasks} removeTask={remove} updateTask={update} taskComplete={taskComplete}/>
+        <div className="initial">
+            <TaskForm onSubmit={add}/>
+            <Task tasks={tasks} removeTask={remove} updateTask={update} taskComplete={taskComplete}/>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-.inicial{
+.initial{
     display: flex;
     min-height: 500px;
     width: 100%;
@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 
-.lado-esquerdo{
+.left-side{
     background-image: url('../../img/Fundo.jpg');
     min-height: 500px;
     width: 50%;
@@ -14,7 +14,7 @@
 }
 
 
-.lado-direito{
+.right-side{
     min-height: 500px;
     width: 50%;
     background: rgb(79, 82, 79);
@@ -43,7 +43,7 @@ h3{
 
 /*------------RESPONSIVIDADE-----------*/
 @media (max-width:699px){
-    .inicial{
+    .initial{
         display: grid;
     }
 
@@ -51,12 +51,12 @@ h3{
         margin-top: 80px;
     }
 
-    .lado-esquerdo{
+    .left-side{
         width: 100%;
         min-height: 400px;
     }
 
-    .lado-direito{
+    .right-side{
         width: 100%;
     }
 }
